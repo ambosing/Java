@@ -36,7 +36,9 @@ public class MyLinkedList<E> implements MyList<E> {
 	@Override
 	public void add(int index, E e) {
 		Node<E> newNode = new Node<>(e);
-		if (index == 0) {
+		if (size == 0) {
+			first = newNode;
+		} else if (index == 0) {
 			newNode.next = first.next;
 			first = newNode;
 		} else {
